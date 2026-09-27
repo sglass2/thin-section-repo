@@ -1,0 +1,16 @@
+{% assign profile_horizons = site.data[site.metadata] | where_exp: 'item','item.profileid == page.objectid' %}
+<section class="my-4" aria-labelledby="profile-horizons-heading">
+    <h3 class="h4" id="profile-horizons-heading">Horizons</h3>
+    {% if profile_horizons.size > 0 %}
+    <ul class="list-group list-group-flush">
+        {% for horizon in profile_horizons %}
+        <li class="list-group-item px-0">
+            <a href="{{ '/items/' | append: horizon.objectid | append: '.html' | relative_url }}">{{ horizon.title | default: horizon.objectid }}</a>
+            {% if horizon.horizon %}<span class="text-muted ms-2">{{ horizon.horizon }}</span>{% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No horizons are linked to this profile.</p>
+    {% endif %}
+</section>
