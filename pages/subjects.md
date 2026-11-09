@@ -12,3 +12,12 @@ cloud-fields: site.data.theme.subjects-fields
 
 Use this word cloud visualization to browse terms and subjects.
 Word size is determined by frequency and all words link to a corresponding collection search.
+
+---
+
+## Browse by Location
+
+{% assign fields = "location" %}
+{% assign min = 1 %}
+<div id="cloud-div-location" class="text-center my-4 bg-white border rounded p-2"></div>
+{% include js/cloud-js.html id="cloud-div-location" fields=fields min=min %}
