@@ -30,13 +30,13 @@
 
                     <!-- child object modal button -->
                     <a id="item-{{ forloop.index }}"
-                        role="button"
-                        data-bs-toggle="modal"
-                        href="#{{ child.objectid }}"
-                        onclick="window.location.hash='{{ child.objectid }}'"
-                        class="btn btn-sm btn-outline-secondary small stretched-link">
-                        {{ child.display_template | upcase | default: "Item" }} <svg class="bi icon-sprite" fill="currentColor" aria-hidden="true"><use href="{{ '/assets/css/cb-icons.svg' | relative_url }}#icon-{{ child.display_template | default: 'file'}}"/></svg>
-                    </a> 
+                    role="button"
+                    data-bs-toggle="modal"
+                    href="#{{ child.objectid }}"
+                    onclick="window.location.hash='{{ child.objectid }}'"
+                    class="stretched-link">
+                    <span class="visually-hidden">View {{ child.title | escape }}</span>
+</a> 
 
                     <!-- child object modal -->
                     <div class="modal fade" id="{{ child.objectid }}" tabindex="-1" role="dialog" aria-labelledby="{{ child.objectid }}ModalLabel" aria-hidden="true">
