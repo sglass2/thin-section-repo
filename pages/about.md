@@ -53,6 +53,10 @@ archaeological and soil thin section collections.
 
  {% include feature/button.html text="SSSA Micromorphological Reference Images" link="https://www.soils.org/media-gallery/search?Action=Search+Media+Gallery&searchAllTextFields=1&allTextFieldsSearchTerm=micromorphology&title=&teaser=&description=&authors=&keywords=&peerReview=&mediaGalleryCoreDisciplinesId=&copyrightType=&orderBy=approval&orderByDirection=desc&submitter=" color="success" centered=true %}
 
+ {% include feature/button.html text="Self-guided Micromorphology Course (including quizzes)" link="https://edafologia.ugr.es/english/index.htm#home" color="success" centered=true %}
+ 
+ - More to come!
+
 ## Iowa State Digital Inquiry Fellowship
 
 The Digital Inquiry Fellowship provides graduate students with a paid, mentored opportunity to explore and integrate digital methods into their research or teaching. Over a seven-month period, fellows will develop original digital projects with guidance and support from a Digital Scholarship Librarian. Their work will culminate in a public presentation at the Digital Scholarship Symposium in March 2027.
