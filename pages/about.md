@@ -51,6 +51,7 @@ archaeological and soil thin section collections.
 
 ## Other Micromorphology Resources
 
+ {% include feature/button.html text="SSSA Micromorphological Reference Images" link="https://www.soils.org/media-gallery/search?Action=Search+Media+Gallery&searchAllTextFields=1&allTextFieldsSearchTerm=micromorphology&title=&teaser=&description=&authors=&keywords=&peerReview=&mediaGalleryCoreDisciplinesId=&copyrightType=&orderBy=approval&orderByDirection=desc&submitter=" color="success" centered=true %}
 
 ## Iowa State Digital Inquiry Fellowship
 
