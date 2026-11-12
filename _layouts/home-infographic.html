@@ -14,9 +14,9 @@ layout: page
 
     {% include index/time.html %}
 
-    {% include index/featured-terms.html field="subject" title="Top Subjects" btn-color="primary" %}
+    {% include index/featured-terms.html field="subject;parentmaterial;pedofeatures" title="Top Subjects" btn-color="primary" %}
 
-    {% include index/featured-terms.html field="location" title="Locations" btn-color="outline-secondary" %}
+    {% include index/featured-terms.html field="location" title="Locations" btn-color="outline-secondary" preserve-case=true %}
     
     {% include index/content.html %}
 

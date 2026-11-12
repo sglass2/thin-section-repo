@@ -38,20 +38,26 @@ module Liquid
       clean.uniq.map { |x| [x, clean.count(x)] }.sort_by {|k, v| -v}.to_h
     end
 
-    def field_count_uniq(input, fields)
+    def field_count_uniq(input, fields, preserve_case = true, sort_by_count = false)
       field_list = fields.to_s.split(';').map(&:strip).reject(&:empty?)
       counts = {}
       input.each do |record|
         field_list.each do |field|
           value = record[field]
           next if value.nil? || value.to_s.strip.empty?
-          value.to_s.downcase.split(';').map(&:strip).reject(&:empty?).each do |term|
+          value.to_s.split(';').map(&:strip).reject(&:empty?).each do |term|
+            term = term.downcase unless preserve_case
             key = [term, field]
             counts[key] = (counts[key] || 0) + 1
           end
         end
       end
-      counts.map { |k, v| [k[0], v, k[1]] }.sort_by { |item| item[0] }
+      terms = counts.map { |k, v| [k[0], v, k[1]] }
+      if sort_by_count
+        terms.sort_by { |item| [-item[1], item[0]] }
+      else
+        terms.sort_by { |item| item[0] }
+      end
     end
 
     def remove_stopwords(input, stopwords, index = 0)

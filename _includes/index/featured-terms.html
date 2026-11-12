@@ -9,18 +9,20 @@
 
     Options:
 
-    - "field" - a field from your metadata that will be used to auto generate top terms (required to auto generate)
+    - "field" - one or more metadata fields, separated by semicolons, used to auto generate top terms (required to auto generate)
     - "featured" - a manually created list of featured terms, separated by ; semicolon (required if not auto generating from a field)
     - "title" - card title text inside card content area (optional)
     - "header" = card header text in bar above card content (optional)
     - "heading_level" = customize the level of the heading if necessary for accessibility, choose "h1", "h2", "h3", etc (optional, default "h2")
     - "max" - max number of terms to display if auto generating (optional, default 5)
     - "btn-color" - a bootstrap color class to theme the buttons. Can be any bootstrap template color (e.g. info, success) or outline (e.g. outline-info, outline-success), including colors created in config-theme-colors. (optional, default "primary")
+    - "preserve-case" - retain capitalization from metadata instead of combining terms without regard to case (optional)
 
     Requires CB's "array_count_uniq.rb" plugin!
 
 {%- endcomment -%}
 
+{% assign termsField = include.field | default: "subject" %}
 {% if include.featured %}
 {% assign topTerms = include.featured | split: ";" %}
 {%- else -%}
@@ -29,25 +31,28 @@
 {% comment %} 
     Use termsField and termsMax to customize feature 
 {% endcomment %}
-{% assign termsField = include.field | default: "subject" %}
-{% assign termsMax = include.max | default: 5 %}
+{% assign termsMax = include.max | default: 8 %}
+{% assign preserveCase = false %}
+{% if include.preserve-case %}{% assign preserveCase = true %}{% endif %}
 {% if site.data.theme.browse-child-objects == true %}
-{%- assign terms = site.data[site.metadata] | where_exp: 'item','item.objectid' | map: termsField | join: ";" -%}
+{%- assign termItems = site.data[site.metadata] | where_exp: 'item','item.objectid' -%}
 {% else %}
-{%- assign terms = site.data[site.metadata] | where_exp: 'item','item.parentid == nil' | map: termsField | join: ";" -%}
-{%- endif -%}
-{%- assign uniqTerms = terms | downcase | split: ";" | array_count_uniq -%}
-{% capture topTerms %}
-{% for i in uniqTerms limit: termsMax %}{{ i[0] }};{% endfor %}{% endcapture %}
-{% assign topTerms = topTerms | split: ";" %}
+{%- assign termItems = site.data[site.metadata] | where_exp: 'item','item.objectid and item.parentid == nil' -%}
+{% endif %}
+{%- assign uniqTerms = termItems | field_count_uniq: termsField, preserveCase, true -%}
 {%- endif -%}
 <div class="card mb-3">
     {% if include.header %}<{{ include.heading_level | default: 'h2' | strip }} class="card-header h5">{{ include.header }}</{{ include.heading_level | default: 'h2' | strip }}>{% endif %}
     <div class="card-body">
         {% if include.title %}<{{ include.heading_level | default: 'h2' | strip }} class="card-title h5">{{ include.title }}</{{ include.heading_level | default: 'h2' | strip }}>{% endif %}
         <p class="card-text">
+            {% if include.featured %}
             {% for s in topTerms %}
             <a class="btn btn-sm btn-{{ include.btn-color | default: 'primary' }} m-1" href="{{ s | strip | url_param_escape | prepend: ':' | prepend: termsField | prepend: '/browse.html#' | relative_url }}">{{ s | strip }}</a>{% endfor %}
+            {% else %}
+            {% for s in uniqTerms limit: termsMax %}
+            <a class="btn btn-sm btn-{{ include.btn-color | default: 'primary' }} m-1" href="{{ s[0] | url_param_escape | prepend: ':' | prepend: s[2] | prepend: '/browse.html#' | relative_url }}">{{ s[0] }}</a>{% endfor %}
+            {% endif %}
         </p>
     </div>
 </div>
