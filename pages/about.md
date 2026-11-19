@@ -17,6 +17,11 @@ padding: 1em
 # Edit the markdown on in this file to describe your collection
 # Look in _includes/feature for options to easily add features to the page
 ---
+Disclaimer: Whole-slide imagery is compressed from original resolution for display on this website. Images downloaded directly from this collection are for educational purposes only. Quantitative Image Analysis should be performed on the original, highest resolution, image.
+
+Contact Sean Glasshoff or authors of related materials for un-compressed files.
+
+Note - Add links to types of scanners, microscopes, and cameras used for collection pictures. Including the ImageJ compression script might be beneficial, especially with a tutorial
 
 ## About this Collection
 
