@@ -12,12 +12,11 @@ Browse the descriptive terms used in this collection's micromorphology metadata.
 
 {% assign term_fields = site.data["terminology-terms"] | group_by: "field" %}
 {% for f in term_fields %}
-{% assign lookup_name = "terminology-" | append: f.name %}
 {% assign terms = f.items | sort: "title" %}
 <h3 class="mt-4">{{ f.name | capitalize }}</h3>
 <div class="list-group mb-4">
 {% for t in terms %}
-{% assign modifier_count = site.data[lookup_name] | where: "term", t.title | map: "modifier" | uniq | size %}
+{% assign modifier_count = site.data["terminology-values"] | where: "field", t.field | where: "term", t.title | map: "modifier" | uniq | size %}
 <a class="list-group-item list-group-item-action d-flex justify-content-between align-items-center" href="{{ '/terminology/' | append: t.slug | append: '.html' | relative_url }}">{{ t.title }} <span class="badge bg-secondary rounded-pill">{{ modifier_count }}</span></a>
 {% endfor %}
 </div>

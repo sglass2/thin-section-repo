@@ -1,0 +1,64 @@
+field,value,term,modifier
+pedofeatures,anorthic fe/mn nodules,Nodules,Anorthic Fe/Mn
+pedofeatures,anorthic fine hematite nodules,Nodules,Anorthic fine hematite
+pedofeatures,anorthic goethite nodules,Nodules,Anorthic goethite
+pedofeatures,anorthic mixed oxide/hydoxide nodules,Nodules,Anorthic mixed oxide/hydroxide
+pedofeatures,anorthic oxide/hydroxide nodules,Nodules,Anorthic oxide/hydroxide
+pedofeatures,carbonade nodules,Nodules,Carbonate
+pedofeatures,carbonate nodules,Nodules,Carbonate
+pedofeatures,concentric oxide/hydroxide nodules,Nodules,Concentric oxide/hydroxide
+pedofeatures,disorthic mixed oxide/hydroxide nodules,Nodules,Disorthic mixed oxide/hydroxide
+pedofeatures,mixed oxide/hydroxide disorthic nodules,Nodules,Disorthic mixed oxide/hydroxide
+pedofeatures,disorthic oxide/hydroxide nodules,Nodules,Disorthic oxide/hydroxide
+pedofeatures,fine goethite nodules,Nodules,Fine goethite
+pedofeatures,micritic nodules,Nodules,Micritic
+pedofeatures,mixed oxide and hydroxide nodules,Nodules,Mixed oxide/hydroxide
+pedofeatures,mixed oxide/hydroxide nodules,Nodules,Mixed oxide/hydroxide
+pedofeatures,orthic oxide/hydroxide nodules,Nodules,Orthic oxide/hydroxide
+pedofeatures,oxide/hydroxide nodules,Nodules,Oxide/hydroxide
+pedofeatures,strongly impregnated disorthic oxide/hydroxide nodules,Nodules,Strongly impregnated disorthic oxide/hydroxide
+pedofeatures,strongly impregnated mixed oxide/hydroxide nodules,Nodules,Strongly impregnated mixed oxide/hydroxide
+pedofeatures,strongly impregnated orthic and disorthic fe/mn nodules,Nodules,Strongly impregnated orthic and disorthic Fe/Mn
+pedofeatures,strongly impregnated orthic fe/mn,Nodules,Strongly impregnated orthic Fe/Mn
+pedofeatures,strongly impregnated orthic fe/mn nodules,Nodules,Strongly impregnated orthic Fe/Mn
+pedofeatures,strongly impregnated orthic oxide/hydroxide nodules,Nodules,Strongly impregnated orthic oxide/hydroxide
+pedofeatures,weakly impregnated orthic fe/mn nodules,Nodules,Weakly impregnated orthic Fe/Mn
+pedofeatures,weakly impregnated orthic iron nodules,Nodules,Weakly impregnated orthic iron
+pedofeatures,weakly impregnated orthic mixed oxide/hydroxide nodules,Nodules,Weakly impregnated orthic mixed oxide/hydroxide
+pedofeatures,weakly impregnated oxide/hydroxide nodule,Nodules,Weakly impregnated oxide/hydroxide
+pedofeatures,clay coating,Coatings,Clay
+pedofeatures,clay coatings,Coatings,Clay
+pedofeatures,dusty clay coating,Coatings,Dusty clay
+pedofeatures,dusty clay coatings,Coatings,Dusty clay
+pedofeatures,limpid clay coating,Coatings,Limpid clay
+pedofeatures,limpid clay coatings,Coatings,Limpid clay
+pedofeatures,microlaminated clay coatings,Coatings,Microlaminated clay
+pedofeatures,organoargillans,Coatings,Organo-clay (organoargillans)
+pedofeatures,carbonate hypocoatings,Hypocoatings,Carbonate
+pedofeatures,clay hypocoatings,Hypocoatings,Clay
+pedofeatures,oxidized hypocoatings,Hypocoatings,Oxidized
+pedofeatures,clay infilling,Infillings,Clay
+pedofeatures,clay infillings,Infillings,Clay
+pedofeatures,clay infllling,Infillings,Clay
+pedofeatures,dense complete micritic infilling,Infillings,Dense complete micritic
+pedofeatures,dense incomplete infilling of organic residues,Infillings,Dense incomplete organic residues
+pedofeatures,excrement infilling,Infillings,Excrement
+pedofeatures,infilling of fecal pellets (large),Infillings,Fecal pellets (large)
+pedofeatures,infilling of fecal pellets (small),Infillings,Fecal pellets (small)
+pedofeatures,microlaminated clay infillings,Infillings,Microlaminated clay
+pedofeatures,organic infilling,Infillings,Organic
+pedofeatures,carbonate masses,Masses,Carbonate
+pedofeatures,goethite mass,Masses,Goethite
+pedofeatures,impregnative oxide/hydroxide masses,Masses,Impregnative oxide/hydroxide
+pedofeatures,micritic carbonate mass,Masses,Micritic carbonate
+pedofeatures,micritic carbonate masses,Masses,Micritic carbonate
+pedofeatures,clay intercalation,Intercalations,Clay
+pedofeatures,intercalations,Intercalations,
+pedofeatures,carbonate pendants,Pendants,Carbonate
+pedofeatures,micritic pendants,Pendants,Micritic
+pedofeatures,clay bridging,Bridges,Clay
+pedofeatures,micritic caps,Caps,Micritic
+pedofeatures,fine hematite concretions,Concretions,Fine hematite
+pedofeatures,mixed oxide/hydroxide fecal pellets,Excrements,Mixed oxide/hydroxide fecal pellets
+pedofeatures,iron depleted matrix,Depletions,Iron (depleted matrix)
+pedofeatures,sand lense,Lenses,Sand

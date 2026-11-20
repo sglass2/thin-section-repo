@@ -1,12 +1,11 @@
 ---
 # Layout for individual terms on the Terminology page
 # pages generated from _data/terminology-terms.csv
-# modifiers come from _data/terminology-<field>.csv
-# For example: _data/terminology-pedofeatures.csv is the source for pedofeatures modifiers
+# modifiers come from _data/terminology-values.csv
+# matched on both its "field" and "term" columns
 layout: default
 ---
-{%- assign lookup_name = "terminology-" | append: page.field -%}
-{%- assign rows = site.data[lookup_name] | where: "term", page.title -%}
+{%- assign rows = site.data["terminology-values"] | where: "field", page.field | where: "term", page.title -%}
 {%- assign modifiers = rows | group_by: "modifier" | sort: "name" -%}
 <div class="container my-4">
 <nav aria-label="breadcrumb">
