@@ -1,0 +1,40 @@
+---
+# Layout for individual terms on the Terminology page
+# pages generated from _data/terminology-terms.csv
+# modifiers come from _data/terminology-<field>.csv
+# For example: _data/terminology-pedofeatures.csv is the source for pedofeatures modifiers
+layout: default
+---
+{%- assign lookup_name = "terminology-" | append: page.field -%}
+{%- assign rows = site.data[lookup_name] | where: "term", page.title -%}
+{%- assign modifiers = rows | group_by: "modifier" | sort: "name" -%}
+<div class="container my-4">
+<nav aria-label="breadcrumb">
+<ol class="breadcrumb">
+<li class="breadcrumb-item"><a href="{{ '/terminology.html' | relative_url }}">Terminology</a></li>
+<li class="breadcrumb-item">{{ page.field | capitalize }}</li>
+<li class="breadcrumb-item active" aria-current="page">{{ page.title }}</li>
+</ol>
+</nav>
+
+<h1>{{ page.title }}</h1>
+{% if page.description and page.description != "" %}<p class="lead">{{ page.description }}</p>{% endif %}
+
+<p>Modifiers applied to <strong>{{ page.title | downcase }}</strong> in the collection's {{ page.field }} metadata. Select one to browse matching items.</p>
+
+<div class="list-group mb-4">
+{%- for m in modifiers -%}
+{%- capture browse_query -%}
+{%- for r in m.items -%}
+{%- if forloop.first -%}?{%- else -%}&amp;{%- endif -%}
+f{{ forloop.index0 }}={{ page.field | url_encode }}&amp;b{{ forloop.index0 }}={% if forloop.first %}AND{% else %}OR{% endif %}&amp;v{{ forloop.index0 }}={{ r.value | strip | url_encode }}
+{%- endfor -%}
+{%- endcapture %}
+<a class="list-group-item list-group-item-action" href="{{ '/browse.html' | relative_url }}{{ browse_query }}">
+{%- if m.name == "" or m.name == nil -%}{{ page.title }} (no modifier){%- else -%}{{ m.name }}{%- endif -%}
+</a>
+{%- endfor %}
+</div>
+
+<a href="{{ '/terminology.html' | relative_url }}">&larr; Back to Terminology</a>
+</div>

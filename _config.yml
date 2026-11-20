@@ -44,6 +44,16 @@ metadata: TSRepo-v3_5
 #     dir: 'items'
 #     extension: 'html' 
 #     filter: 'objectid'  
+page_gen:
+  # 1) item pages from main metadata CSV (replicating CB default behavior)
+  - name: 'objectid'
+  # 2) one Terminology page per row of _data/terminology-terms.csv
+  - data: 'terminology-terms'
+    template_location: ''
+    template: 'terminology-term'
+    name: 'slug'
+    dir: 'terminology'
+    filter: 'slug'
 
 ##########
 # ORGANIZATION SETTINGS
